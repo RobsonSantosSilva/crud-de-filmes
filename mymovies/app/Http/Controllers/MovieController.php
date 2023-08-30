@@ -26,7 +26,7 @@ class MovieController extends Controller
         $movie->image = $request->image;
         $movie->save();
 
-        return response()->json(['message' => 'Product Created!']);
+        return response()->json(['message' => 'Movie Created!']);
     }
 
     public function paginating(Request $request){
@@ -40,13 +40,13 @@ class MovieController extends Controller
         $movie->image = $request->image;
         $movie->save();
 
-        return response()->json(['message' => 'Product Updated!']);
+        return response()->json(['message' => 'Movie Updated!']);
     }
 
     public function destroy($id){
         $movie = Movie::find($id);
         $movie->delete();
 
-        return response()->json(['message' => 'Product Deleted!']);
+        return response()->json(['message' => 'Movie Deleted!']);
     }
 }

@@ -18,10 +18,10 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'movies'], function() use($router){
+    $router->get('/list', 'MovieController@paginating');
     $router->get('/', 'MovieController@index');
     $router->get('/{id}', 'MovieController@show');
     $router->post('/', 'MovieController@store');
-    $router->get('/list', 'MovieController@paginating');
     $router->put('/{id}', 'MovieController@update');
     $router->delete('/{id}', 'MovieController@destroy');
 });
